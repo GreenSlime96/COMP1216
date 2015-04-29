@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;org.eventb.codegen.ui.cgConfig;de.prob.units.mchBase" org.eventb.texttools.text_lastmodified="1430301755288" org.eventb.texttools.text_representation="machine AuctionMachine&#10;sees AuctionContext&#10;&#10;variables register buyer seller&#10;&#10;invariants&#10;&#9;@inv1 register ⊆ USERS&#10;&#9;@inv2 buyer ⊆ register&#10;&#9;@inv3 seller ⊆ register&#10;&#10;events&#10;  event INITIALISATION&#10;  &#9;then&#10;  &#9;&#9;@act1 register ≔ ∅&#10;  &#9;&#9;@act2 buyer ≔ ∅&#10;  &#9;&#9;@act3 seller ≔ ∅&#10;  end&#10;&#10;  event Register&#10;  &#9;any u&#10;  &#9;where&#10;  &#9;&#9;@grd1 u ∈ USERS&#10;  &#9;&#9;@grd2 u ∉  register&#10;&#9;then&#10;&#9;&#9;@act1 register ≔ register ∪ {u}&#10;  end&#10;end&#10;" version="5">
+<org.eventb.core.seesContext name="_qD3f8O5MEeSpR9iqQeSCVw" org.eventb.core.target="AuctionContext"/>
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="_ejqhQO5OEeSpR9iqQeSCVw" org.eventb.core.assignment="register ≔ ∅" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_ejwn4O5OEeSpR9iqQeSCVw" org.eventb.core.assignment="buyer ≔ ∅" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="_ej2ugO5OEeSpR9iqQeSCVw" org.eventb.core.assignment="seller ≔ ∅" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_hoRMoe5MEeSpR9iqQeSCVw" org.eventb.core.identifier="register"/>
+<org.eventb.core.invariant name="_hoXTQO5MEeSpR9iqQeSCVw" org.eventb.core.label="inv1" org.eventb.core.predicate="register ⊆ USERS"/>
+<org.eventb.core.variable name="_ctdDAO5NEeSpR9iqQeSCVw" org.eventb.core.identifier="buyer"/>
+<org.eventb.core.variable name="_ctdDAe5NEeSpR9iqQeSCVw" org.eventb.core.identifier="seller"/>
+<org.eventb.core.invariant name="_ctjJoO5NEeSpR9iqQeSCVw" org.eventb.core.label="inv2" org.eventb.core.predicate="buyer ⊆ register"/>
+<org.eventb.core.invariant name="_ctpQQO5NEeSpR9iqQeSCVw" org.eventb.core.label="inv3" org.eventb.core.predicate="seller ⊆ register"/>
+<org.eventb.core.event name="_ekPJAO5OEeSpR9iqQeSCVw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Register">
+<org.eventb.core.parameter name="_ekVPoO5OEeSpR9iqQeSCVw" org.eventb.core.identifier="u"/>
+<org.eventb.core.guard name="_ekVPoe5OEeSpR9iqQeSCVw" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ USERS"/>
+<org.eventb.core.guard name="_ekbWQO5OEeSpR9iqQeSCVw" org.eventb.core.label="grd2" org.eventb.core.predicate="u ∉  register"/>
+<org.eventb.core.action name="_ekhc4O5OEeSpR9iqQeSCVw" org.eventb.core.assignment="register ≔ register ∪ {u}" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

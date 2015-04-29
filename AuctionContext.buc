@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;org.eventb.codegen.ui.cgConfig;de.prob.symbolic.ctxBase;de.prob.units.mchBase" org.eventb.texttools.text_lastmodified="1430301047572" org.eventb.texttools.text_representation="context AuctionContext&#10;sets USERS AUCTIONS&#10;end&#10;" version="3">
+<org.eventb.core.carrierSet name="_w4LsYO5MEeSpR9iqQeSCVw" org.eventb.core.identifier="USERS"/>
+<org.eventb.core.carrierSet name="_w4LsYe5MEeSpR9iqQeSCVw" org.eventb.core.identifier="AUCTIONS"/>
+</org.eventb.core.contextFile>
