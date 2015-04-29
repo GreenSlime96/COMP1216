@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;org.eventb.codegen.ui.cgConfig;de.prob.symbolic.ctxBase;de.prob.units.mchBase">
-<org.eventb.core.scCarrierSet name="AUCTIONS" org.eventb.core.source="/COMP1216/AuctionContext.buc|org.eventb.core.contextFile#AuctionContext|org.eventb.core.carrierSet#_w4LsYe5MEeSpR9iqQeSCVw" org.eventb.core.type="ℙ(AUCTIONS)"/>
+<org.eventb.core.scCarrierSet name="AUCTIONS" org.eventb.core.source="/COMP1216/AuctionContext.buc|org.eventb.core.contextFile#AuctionContext|org.eventb.core.carrierSet#_qJ3S4O5PEeSpR9iqQeSCVw" org.eventb.core.type="ℙ(AUCTIONS)"/>
+<org.eventb.core.scCarrierSet name="ITEMS" org.eventb.core.source="/COMP1216/AuctionContext.buc|org.eventb.core.contextFile#AuctionContext|org.eventb.core.carrierSet#_4PKc0O5TEeSpR9iqQeSCVw" org.eventb.core.type="ℙ(ITEMS)"/>
 <org.eventb.core.scCarrierSet name="USERS" org.eventb.core.source="/COMP1216/AuctionContext.buc|org.eventb.core.contextFile#AuctionContext|org.eventb.core.carrierSet#_w4LsYO5MEeSpR9iqQeSCVw" org.eventb.core.type="ℙ(USERS)"/>
 </org.eventb.core.scContextFile>

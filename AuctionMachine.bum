@@ -1,21 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;org.eventb.codegen.ui.cgConfig;de.prob.units.mchBase" org.eventb.texttools.text_lastmodified="1430301755288" org.eventb.texttools.text_representation="machine AuctionMachine&#10;sees AuctionContext&#10;&#10;variables register buyer seller&#10;&#10;invariants&#10;&#9;@inv1 register ⊆ USERS&#10;&#9;@inv2 buyer ⊆ register&#10;&#9;@inv3 seller ⊆ register&#10;&#10;events&#10;  event INITIALISATION&#10;  &#9;then&#10;  &#9;&#9;@act1 register ≔ ∅&#10;  &#9;&#9;@act2 buyer ≔ ∅&#10;  &#9;&#9;@act3 seller ≔ ∅&#10;  end&#10;&#10;  event Register&#10;  &#9;any u&#10;  &#9;where&#10;  &#9;&#9;@grd1 u ∈ USERS&#10;  &#9;&#9;@grd2 u ∉  register&#10;&#9;then&#10;&#9;&#9;@act1 register ≔ register ∪ {u}&#10;  end&#10;end&#10;" version="5">
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;org.eventb.codegen.ui.cgConfig;de.prob.units.mchBase" org.eventb.texttools.text_lastmodified="1430311669670" org.eventb.texttools.text_representation="machine AuctionMachine&#10;sees AuctionContext&#10;&#10;variables register buyer seller auctions item&#10;&#10;invariants&#10;&#9;@inv1 register ⊆ USERS&#9;&#9;&#9;&#9;&#9;// registered is a subset of users&#10;&#9;@inv2 item ⊆  ITEMS&#9;&#9;&#9;&#9;&#9;&#9;// items is a subset of items&#10;&#9;@inv3 auctions ∈ AUCTIONS ⇸ item&#9;&#9;&#9;// each auction can only have one item&#10;&#9;@inv4 seller ∈ register ↔ auctions&#9;&#9;// sellers are registered and can own multiple auctions&#10;&#9;@inv5 buyer ∈ register ↔ auctions&#9;&#9;// buyers are registered and can bid on multiple auctions&#10;&#9;//@inv8 &#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;// each auction can only have one seller&#10;&#10;&#9;// auction has ITEMS, FEEDBACK, SELLER, RESERVEPRICE, CURRENTPRICE&#10;&#10;events&#10;  event INITIALISATION&#10;  &#9;then&#10;  &#9;&#9;@act1 register ≔ ∅&#10;  &#9;&#9;@act2 buyer ≔ ∅&#10;  &#9;&#9;@act3 seller ≔ ∅&#10;  &#9;&#9;@act4 auctions ≔ ∅&#10;  &#9;&#9;@act5 item ≔ ∅&#10;  end&#10;&#10;  event Register&#10;  &#9;any u&#10;  &#9;where&#10;  &#9;&#9;@grd1 u ∈ USERS&#10;  &#9;&#9;@grd2 u ∉  register&#10;&#9;then&#10;&#9;&#9;@act1 register ≔ register ∪ {u}&#10;  end&#10;&#10;  event AddItem&#10;  &#9;any i&#10;  &#9;where&#10;  &#9;&#9;@grd1 i ∈ ITEMS&#10;  &#9;&#9;@grd2 i ∉ item&#10;  &#9;then&#10;  &#9;&#9;@act1 item ≔ item ∪  {i}&#10;  end&#10;&#10;  event CreateAuction&#10;  &#9;any a u i&#10;  &#9;where&#10;  &#9;&#9;@grd1 a ∈ AUCTIONS ↦ item&#10;  &#9;&#9;@grd2 a ∉ auctions&#10;  &#9;&#9;@grd3 i ∈ item&#10;  &#9;&#9;@grd5 u ∈ register&#10;  &#9;then&#10;  &#9;&#9;@act1 auctions ≔ auctions ∪ {a ↦ i}&#10;  &#9;&#9;@act2 seller ≔  seller ∪ {u ↦  a}&#10;  end&#10;&#10;  event CancelAuction&#10;  &#9;any a&#10;  &#9;where&#10;  &#9;&#9;@grd1 a ∈ auctions&#10;&#9;then&#10;  &#9;&#9;@act1 auctions ≔ auctions ∖ {a}&#10;  end&#10;&#10;end&#10;" version="5">
 <org.eventb.core.seesContext name="_qD3f8O5MEeSpR9iqQeSCVw" org.eventb.core.target="AuctionContext"/>
 <org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
 <org.eventb.core.action name="_ejqhQO5OEeSpR9iqQeSCVw" org.eventb.core.assignment="register ≔ ∅" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="_ejwn4O5OEeSpR9iqQeSCVw" org.eventb.core.assignment="buyer ≔ ∅" org.eventb.core.label="act2"/>
 <org.eventb.core.action name="_ej2ugO5OEeSpR9iqQeSCVw" org.eventb.core.assignment="seller ≔ ∅" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="_3fBOwe5SEeSpR9iqQeSCVw" org.eventb.core.assignment="auctions ≔ ∅" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="_akw-kO5VEeSpR9iqQeSCVw" org.eventb.core.assignment="item ≔ ∅" org.eventb.core.label="act5"/>
 </org.eventb.core.event>
 <org.eventb.core.variable name="_hoRMoe5MEeSpR9iqQeSCVw" org.eventb.core.identifier="register"/>
-<org.eventb.core.invariant name="_hoXTQO5MEeSpR9iqQeSCVw" org.eventb.core.label="inv1" org.eventb.core.predicate="register ⊆ USERS"/>
+<org.eventb.core.invariant name="_hoXTQO5MEeSpR9iqQeSCVw" org.eventb.core.comment="registered is a subset of users" org.eventb.core.label="inv1" org.eventb.core.predicate="register ⊆ USERS"/>
 <org.eventb.core.variable name="_ctdDAO5NEeSpR9iqQeSCVw" org.eventb.core.identifier="buyer"/>
 <org.eventb.core.variable name="_ctdDAe5NEeSpR9iqQeSCVw" org.eventb.core.identifier="seller"/>
-<org.eventb.core.invariant name="_ctjJoO5NEeSpR9iqQeSCVw" org.eventb.core.label="inv2" org.eventb.core.predicate="buyer ⊆ register"/>
-<org.eventb.core.invariant name="_ctpQQO5NEeSpR9iqQeSCVw" org.eventb.core.label="inv3" org.eventb.core.predicate="seller ⊆ register"/>
 <org.eventb.core.event name="_ekPJAO5OEeSpR9iqQeSCVw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Register">
 <org.eventb.core.parameter name="_ekVPoO5OEeSpR9iqQeSCVw" org.eventb.core.identifier="u"/>
 <org.eventb.core.guard name="_ekVPoe5OEeSpR9iqQeSCVw" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ USERS"/>
 <org.eventb.core.guard name="_ekbWQO5OEeSpR9iqQeSCVw" org.eventb.core.label="grd2" org.eventb.core.predicate="u ∉  register"/>
 <org.eventb.core.action name="_ekhc4O5OEeSpR9iqQeSCVw" org.eventb.core.assignment="register ≔ register ∪ {u}" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
+<org.eventb.core.variable name="__1UAwO5REeSpR9iqQeSCVw" org.eventb.core.identifier="auctions"/>
+<org.eventb.core.event name="_WHMJkO5hEeSpR9iqQeSCVw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="AddItem">
+<org.eventb.core.parameter name="_WHSQMO5hEeSpR9iqQeSCVw" org.eventb.core.identifier="i"/>
+<org.eventb.core.guard name="_WHSQMe5hEeSpR9iqQeSCVw" org.eventb.core.label="grd1" org.eventb.core.predicate="i ∈ ITEMS"/>
+<org.eventb.core.guard name="_WHYW0O5hEeSpR9iqQeSCVw" org.eventb.core.label="grd2" org.eventb.core.predicate="i ∉ item"/>
+<org.eventb.core.action name="_WHedcO5hEeSpR9iqQeSCVw" org.eventb.core.assignment="item ≔ item ∪  {i}" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="__1aHYe5REeSpR9iqQeSCVw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="CreateAuction">
+<org.eventb.core.parameter name="_DVXwsO5eEeSpR9iqQeSCVw" org.eventb.core.identifier="a"/>
+<org.eventb.core.parameter name="_J8cSsO5bEeSpR9iqQeSCVw" org.eventb.core.identifier="u"/>
+<org.eventb.core.parameter name="_Vj96AO5cEeSpR9iqQeSCVw" org.eventb.core.identifier="i"/>
+<org.eventb.core.guard name="__1mUou5REeSpR9iqQeSCVw" org.eventb.core.label="grd1" org.eventb.core.predicate="a ∈ AUCTIONS ↦ item"/>
+<org.eventb.core.guard name="_DYzRcO5ZEeSpR9iqQeSCVw" org.eventb.core.label="grd2" org.eventb.core.predicate="a ∉ auctions"/>
+<org.eventb.core.guard name="_DVqEkO5eEeSpR9iqQeSCVw" org.eventb.core.label="grd3" org.eventb.core.predicate="i ∈ item"/>
+<org.eventb.core.guard name="_3MZh0O5fEeSpR9iqQeSCVw" org.eventb.core.label="grd5" org.eventb.core.predicate="u ∈ register"/>
+<org.eventb.core.action name="__1yh4O5REeSpR9iqQeSCVw" org.eventb.core.assignment="auctions ≔ auctions ∪ {a ↦ i}" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="_rc4RkO5dEeSpR9iqQeSCVw" org.eventb.core.assignment="seller ≔  seller ∪ {u ↦  a}" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="__14ogO5REeSpR9iqQeSCVw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="CancelAuction">
+<org.eventb.core.parameter name="_amAUsO5VEeSpR9iqQeSCVw" org.eventb.core.identifier="a"/>
+<org.eventb.core.guard name="_amGbUO5VEeSpR9iqQeSCVw" org.eventb.core.label="grd1" org.eventb.core.predicate="a ∈ auctions"/>
+<org.eventb.core.action name="_amGbUe5VEeSpR9iqQeSCVw" org.eventb.core.assignment="auctions ≔ auctions ∖ {a}" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="_WGtocO5hEeSpR9iqQeSCVw" org.eventb.core.comment="items is a subset of items" org.eventb.core.label="inv2" org.eventb.core.predicate="item ⊆  ITEMS"/>
+<org.eventb.core.invariant name="_WG51sO5hEeSpR9iqQeSCVw" org.eventb.core.comment="each auction can only have one item" org.eventb.core.label="inv3" org.eventb.core.predicate="auctions ∈ AUCTIONS ⇸ item"/>
+<org.eventb.core.invariant name="_3phxcO5ZEeSpR9iqQeSCVw" org.eventb.core.comment="sellers are registered and can own multiple auctions" org.eventb.core.label="inv4" org.eventb.core.predicate="seller ∈ register ↔ auctions"/>
+<org.eventb.core.invariant name="_9Uv2kO5TEeSpR9iqQeSCVw" org.eventb.core.comment="buyers are registered and can bid on multiple auctions&#10;@inv8 &#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;// each auction can only have one seller&#10;auction has ITEMS, FEEDBACK, SELLER, RESERVEPRICE, CURRENTPRICE" org.eventb.core.label="inv5" org.eventb.core.predicate="buyer ∈ register ↔ auctions"/>
+<org.eventb.core.variable name="_v1OHoO5ZEeSpR9iqQeSCVw" org.eventb.core.identifier="item"/>
 </org.eventb.core.machineFile>

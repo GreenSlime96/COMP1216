@@ -11,18 +11,28 @@
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prProof name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="AUCTIONS">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
 <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
 </org.eventb.core.prAnte>
 </org.eventb.core.prRule>
 <org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
-<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(USERS))⊆(∅ ⦂ ℙ(USERS))"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(AUCTIONS×ITEMS))∈AUCTIONS ⇸ (∅ ⦂ ℙ(ITEMS))"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="INITIALISATION/inv4/INV"/>
+<org.eventb.core.prProof name="INITIALISATION/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(USERS×(AUCTIONS×ITEMS)))∈(∅ ⦂ ℙ(USERS)) ↔ (∅ ⦂ ℙ(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+</org.eventb.core.prProof>
 <org.eventb.core.prProof name="Register/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
@@ -58,7 +68,80 @@
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
 </org.eventb.core.prProof>
-<org.eventb.core.prProof name="Register/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3">
+<org.eventb.core.prProof name="Register/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p2" org.eventb.core.prInfHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p2"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p3">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="seller" org.eventb.core.type="USERS"/>
+<org.eventb.core.prIdent name="u" org.eventb.core.type="USERS"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="item⊆ITEMS">
+<org.eventb.core.prIdent name="ITEMS" org.eventb.core.type="ℙ(ITEMS)"/>
+<org.eventb.core.prIdent name="item" org.eventb.core.type="ℙ(ITEMS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="seller∈register∪{u}"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬u∈register"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="register⊆USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="seller∈register"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="u∈USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="u∉register"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="register/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p4"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p1,p4">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="buyer" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="seller" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="u" org.eventb.core.type="USERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="buyer⊆register∪{u}"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬u∈register"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="register⊆USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="seller⊆register"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="buyer⊆register"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="u∈USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="u∉register"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="register/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3">
 <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
 <org.eventb.core.prAnte name="'">
 <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p4"/>
@@ -89,6 +172,551 @@
 </org.eventb.core.prPred>
 <org.eventb.core.prPred name="p0" org.eventb.core.predicate="seller⊆register∪{u}"/>
 <org.eventb.core.prPred name="p3" org.eventb.core.predicate="u∉register"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="INITIALISATION/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(USERS×(AUCTIONS×ITEMS)))∈(∅ ⦂ ℙ(USERS)) ↔ (∅ ⦂ ℙ(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="CreateAuction/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5" org.eventb.core.prSets="AUCTIONS">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p3,p1,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="a" org.eventb.core.type="AUCTIONS"/>
+<org.eventb.core.prIdent name="auctions" org.eventb.core.type="ℙ(AUCTIONS×ITEMS)"/>
+<org.eventb.core.prIdent name="buyer" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="i" org.eventb.core.type="ITEMS"/>
+<org.eventb.core.prIdent name="item" org.eventb.core.type="ℙ(ITEMS)"/>
+<org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="seller" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="u" org.eventb.core.type="USERS"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="item⊆ITEMS">
+<org.eventb.core.prIdent name="ITEMS" org.eventb.core.type="ℙ(ITEMS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="register⊆USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="buyer∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="auctions∈AUCTIONS ↔ item"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="buyer∈register ↔ auctions∪{a ↦ i}"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="seller∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="i∈item"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="u∈register"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="a∈AUCTIONS"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="CancelAuction/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="AUCTIONS">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p4,p3,p1">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="a" org.eventb.core.type="AUCTIONS×ITEMS"/>
+<org.eventb.core.prIdent name="auctions" org.eventb.core.type="ℙ(AUCTIONS×ITEMS)"/>
+<org.eventb.core.prIdent name="buyer" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="item" org.eventb.core.type="ℙ(ITEMS)"/>
+<org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="seller" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="a∈auctions"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="item⊆ITEMS">
+<org.eventb.core.prIdent name="ITEMS" org.eventb.core.type="ℙ(ITEMS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="auctions∈AUCTIONS ⇸ item"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="auctions ∖ {a}∈AUCTIONS ⇸ item"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="register⊆USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="buyer∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="seller∈register ↔ auctions"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="INITIALISATION/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(USERS×(AUCTIONS×ITEMS)))∈(∅ ⦂ ℙ(USERS)) ↔ (∅ ⦂ ℙ(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="INITIALISATION/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p1" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(USERS×(AUCTIONS×ITEMS)))∈(∅ ⦂ ℙ(USERS)) ↔ (∅ ⦂ ℙ(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="Register/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="AUCTIONS">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p3,p2,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="auctions" org.eventb.core.type="ℙ(AUCTIONS×ITEMS)"/>
+<org.eventb.core.prIdent name="buyer" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="item" org.eventb.core.type="ℙ(ITEMS)"/>
+<org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="seller" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="u" org.eventb.core.type="USERS"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="item⊆ITEMS">
+<org.eventb.core.prIdent name="ITEMS" org.eventb.core.type="ℙ(ITEMS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="auctions∈AUCTIONS ⇸ item"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬u∈register"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="seller∈register∪{u} ↔ auctions"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="register⊆USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="buyer∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="seller∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="u∈USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="u∉register"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="Register/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="AUCTIONS">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p3,p2,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="auctions" org.eventb.core.type="ℙ(AUCTIONS×ITEMS)"/>
+<org.eventb.core.prIdent name="buyer" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="item" org.eventb.core.type="ℙ(ITEMS)"/>
+<org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="seller" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="u" org.eventb.core.type="USERS"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="item⊆ITEMS">
+<org.eventb.core.prIdent name="ITEMS" org.eventb.core.type="ℙ(ITEMS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="auctions∈AUCTIONS ⇸ item"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬u∈register"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="register⊆USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="buyer∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="buyer∈register∪{u} ↔ auctions"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="seller∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="u∈USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="u∉register"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="CreateAuction/inv6/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5" org.eventb.core.prSets="AUCTIONS">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p3,p2,p5,p6">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="a" org.eventb.core.type="AUCTIONS"/>
+<org.eventb.core.prIdent name="auctions" org.eventb.core.type="ℙ(AUCTIONS×ITEMS)"/>
+<org.eventb.core.prIdent name="buyer" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="i" org.eventb.core.type="ITEMS"/>
+<org.eventb.core.prIdent name="item" org.eventb.core.type="ℙ(ITEMS)"/>
+<org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="seller" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="u" org.eventb.core.type="USERS"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="item⊆ITEMS">
+<org.eventb.core.prIdent name="ITEMS" org.eventb.core.type="ℙ(ITEMS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="auctions∈AUCTIONS ⇸ item"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="seller∈register ↔ auctions∪{a ↦ i}"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="register⊆USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="buyer∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬i∈item"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="seller∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="i∉item"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="u∈register"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="a∈AUCTIONS"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="CreateAuction/inv7/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5" org.eventb.core.prSets="AUCTIONS">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p9"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p3,p2,p5,p6">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="a" org.eventb.core.type="AUCTIONS"/>
+<org.eventb.core.prIdent name="auctions" org.eventb.core.type="ℙ(AUCTIONS×ITEMS)"/>
+<org.eventb.core.prIdent name="buyer" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="i" org.eventb.core.type="ITEMS"/>
+<org.eventb.core.prIdent name="item" org.eventb.core.type="ℙ(ITEMS)"/>
+<org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="seller" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="u" org.eventb.core.type="USERS"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="item⊆ITEMS">
+<org.eventb.core.prIdent name="ITEMS" org.eventb.core.type="ℙ(ITEMS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="auctions∈AUCTIONS ⇸ item"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="register⊆USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="buyer∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬i∈item"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="buyer∈register ↔ auctions∪{a ↦ i}"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="seller∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="i∉item"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="u∈register"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="a∈AUCTIONS"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="CancelAuction/inv6/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="item⊆ITEMS">
+<org.eventb.core.prIdent name="ITEMS" org.eventb.core.type="ℙ(ITEMS)"/>
+<org.eventb.core.prIdent name="item" org.eventb.core.type="ℙ(ITEMS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="register⊆USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="CancelAuction/inv7/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="item⊆ITEMS">
+<org.eventb.core.prIdent name="ITEMS" org.eventb.core.type="ℙ(ITEMS)"/>
+<org.eventb.core.prIdent name="item" org.eventb.core.type="ℙ(ITEMS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="register⊆USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="CreateAuction/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5" org.eventb.core.prSets="AUCTIONS">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p3,p1,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="a" org.eventb.core.type="AUCTIONS"/>
+<org.eventb.core.prIdent name="auctions" org.eventb.core.type="ℙ(AUCTIONS×ITEMS)"/>
+<org.eventb.core.prIdent name="buyer" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="i" org.eventb.core.type="ITEMS"/>
+<org.eventb.core.prIdent name="item" org.eventb.core.type="ℙ(ITEMS)"/>
+<org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="seller" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="u" org.eventb.core.type="USERS"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="item⊆ITEMS">
+<org.eventb.core.prIdent name="ITEMS" org.eventb.core.type="ℙ(ITEMS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="register⊆USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="buyer∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="auctions∈AUCTIONS ↔ item"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="seller∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="i∈item"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="auctions∪{a ↦ i}∈AUCTIONS ↔ item"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="u∈register"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="a∈AUCTIONS"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="CancelAuction/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="AUCTIONS">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p4,p3,p1">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="a" org.eventb.core.type="AUCTIONS×ITEMS"/>
+<org.eventb.core.prIdent name="auctions" org.eventb.core.type="ℙ(AUCTIONS×ITEMS)"/>
+<org.eventb.core.prIdent name="buyer" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="item" org.eventb.core.type="ℙ(ITEMS)"/>
+<org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="seller" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="a∈auctions"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="item⊆ITEMS">
+<org.eventb.core.prIdent name="ITEMS" org.eventb.core.type="ℙ(ITEMS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="auctions∈AUCTIONS ⇸ item"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="auctions ∖ {a}∈AUCTIONS ⇸ item"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="register⊆USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="buyer∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="seller∈register ↔ auctions"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="Register/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="AUCTIONS">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p3,p2,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="auctions" org.eventb.core.type="ℙ(AUCTIONS×ITEMS)"/>
+<org.eventb.core.prIdent name="buyer" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="item" org.eventb.core.type="ℙ(ITEMS)"/>
+<org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="seller" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="u" org.eventb.core.type="USERS"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="item⊆ITEMS">
+<org.eventb.core.prIdent name="ITEMS" org.eventb.core.type="ℙ(ITEMS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="auctions∈AUCTIONS ⇸ item"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬u∈register"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="seller∈register∪{u} ↔ auctions"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="register⊆USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="buyer∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="seller∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="u∈USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="u∉register"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="Register/inv5/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="AUCTIONS">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p3,p2,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="auctions" org.eventb.core.type="ℙ(AUCTIONS×ITEMS)"/>
+<org.eventb.core.prIdent name="buyer" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="item" org.eventb.core.type="ℙ(ITEMS)"/>
+<org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="seller" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="u" org.eventb.core.type="USERS"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="item⊆ITEMS">
+<org.eventb.core.prIdent name="ITEMS" org.eventb.core.type="ℙ(ITEMS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="auctions∈AUCTIONS ⇸ item"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬u∈register"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="register⊆USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="buyer∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="buyer∈register∪{u} ↔ auctions"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="seller∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="u∈USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="u∉register"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="CreateAuction/inv4/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5" org.eventb.core.prSets="AUCTIONS">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p2,p3,p1,p4,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="a" org.eventb.core.type="AUCTIONS"/>
+<org.eventb.core.prIdent name="auctions" org.eventb.core.type="ℙ(AUCTIONS×ITEMS)"/>
+<org.eventb.core.prIdent name="buyer" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="i" org.eventb.core.type="ITEMS"/>
+<org.eventb.core.prIdent name="item" org.eventb.core.type="ℙ(ITEMS)"/>
+<org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="seller" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="u" org.eventb.core.type="USERS"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="item⊆ITEMS">
+<org.eventb.core.prIdent name="ITEMS" org.eventb.core.type="ℙ(ITEMS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="seller∈register ↔ auctions∪{a ↦ i}"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="register⊆USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="buyer∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="auctions∈AUCTIONS ↔ item"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="seller∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="i∈item"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="u∈register"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="a∈AUCTIONS"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="CancelAuction/inv4/INV" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p1"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="item⊆ITEMS">
+<org.eventb.core.prIdent name="ITEMS" org.eventb.core.type="ℙ(ITEMS)"/>
+<org.eventb.core.prIdent name="item" org.eventb.core.type="ℙ(ITEMS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="register⊆USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="AddItem/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="AUCTIONS">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p5"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p8"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p3,p2,p5">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="auctions" org.eventb.core.type="ℙ(AUCTIONS×ITEMS)"/>
+<org.eventb.core.prIdent name="buyer" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prIdent name="i" org.eventb.core.type="ITEMS"/>
+<org.eventb.core.prIdent name="item" org.eventb.core.type="ℙ(ITEMS)"/>
+<org.eventb.core.prIdent name="register" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="seller" org.eventb.core.type="ℙ(USERS×(AUCTIONS×ITEMS))"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="auctions∈AUCTIONS ⇸ item∪{i}"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="item⊆ITEMS">
+<org.eventb.core.prIdent name="ITEMS" org.eventb.core.type="ℙ(ITEMS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="auctions∈AUCTIONS ⇸ item"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="register⊆USERS">
+<org.eventb.core.prIdent name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="buyer∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬i∈item"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="i∈ITEMS">
+<org.eventb.core.prIdent name="ITEMS" org.eventb.core.type="ℙ(ITEMS)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="seller∈register ↔ auctions"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="i∉item"/>
 <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL3:1"/>
